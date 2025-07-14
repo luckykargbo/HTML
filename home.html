@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VNAT.K Guest House</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="images/WhatsApp_Image_2025-06-17_at_17.19.28_92a4fd10-removebg-preview.png" style="display:block;margin-left:auto;margin-right:auto;">
+  <h1 style="text-align:center;" id="welcome-msg">Welcome to VNAT.K Guest House</h1>
+  <script>
+    // Show username if logged in
+    function showWelcome() {
+      if (localStorage.getItem('isLoggedIn') === 'true') {
+        var username = localStorage.getItem('username') || '';
+        if(username) {
+          document.getElementById('welcome-msg').textContent = 'Welcome, ' + username + '!';
+        }
+      }
+    }
+    showWelcome();
+  </script>
+    <h3><p>Looking for a comfortable and affordable place to stay? VNAT.K offers well-maintained houses for rent in a peaceful and secure environment.</p></h3>
+
+  <p>Call/WhatsApp: +2328857827 or +23273623761</p>
+  <p>Email: kattyruth01@icloud.com</p>
+  <a href="rooms.html">View Rooms</a> |
+  <a href="booking.html">Book Now</a> |
+  <a href="signin.html" id="signin-link">Sign In</a> |
+  <a href="signup.html" id="signup-link">Sign Up</a> |
+  <a href="#" id="signout-link" style="display:none;" onclick="logoutUser()">Sign Out</a>
+  <script>
+    // Show/hide links based on login status
+    function checkLogin() {
+      if (localStorage.getItem('isLoggedIn') === 'true') {
+        document.getElementById('signin-link').style.display = 'none';
+        document.getElementById('signup-link').style.display = 'none';
+        document.getElementById('signout-link').style.display = 'inline';
+      } else {
+        document.getElementById('signin-link').style.display = 'inline';
+        document.getElementById('signup-link').style.display = 'inline';
+        document.getElementById('signout-link').style.display = 'none';
+      }
+    }
+    function logoutUser() {
+      localStorage.setItem('isLoggedIn', 'false');
+      localStorage.removeItem('username');
+      window.location.href = 'signin.html';
+    }
+    checkLogin();
+  </script>
+</body>
+</html> 

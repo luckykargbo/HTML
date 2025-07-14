@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Out - VNAT.K Guest House</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="signout-card">
+    <h1>Sign Out</h1>
+    <form action="#" method="post" autocomplete="off">
+      <label for="username">Username or Email:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <label for="confirm">Confirm Password:</label>
+      <input type="password" id="confirm" name="confirm" required>
+      <button type="submit">Sign Out</button>
+      <p id="signout-msg" style="display:none;color:green;text-align:center;margin-top:10px;">You have been signed out successfully!</p>
+  <script>
+    document.querySelector('.signout-card form').onsubmit = function(e) {
+      e.preventDefault();
+      document.getElementById('signout-msg').style.display = 'block';
+      setTimeout(function() {
+        window.location.href = 'signin.html';
+      }, 2000);
+    };
+  </script>
+      <hr>
+      <button type="button" class="social-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple logo" style="height:20px;vertical-align:middle;margin-right:8px;">Continue with Apple
+      </button>
+      <button type="button" class="google-btn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo" style="height:20px;vertical-align:middle;margin-right:8px;">Continue with Google
+      </button>
+      <p>Already have an account? <a href="signin.html">Sign in</a></p>
+    </form>
+  </div>
+  <style>
+    body {
+      background: #f3f6f8;
+      font-family: sans-serif;
+    }
+    .signout-card {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 32px 32px 24px 32px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    .signout-card h1 {
+      text-align: center;
+      color: #0a66c2;
+      margin-bottom: 24px;
+    }
+    .signout-card label {
+      font-weight: 600;
+    }
+    .signout-card input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 16px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .signout-card button {
+      width: 100%;
+      background: #0a66c2;
+      color: white;
+      padding: 12px 0;
+      border: none;
+      border-radius: 24px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 16px;
+    }
+    .signout-card hr {
+      margin: 20px 0;
+      border: none;
+      border-top: 1px solid #eee;
+    }
+    .signout-card .social-btn {
+      background: #000;
+      margin-bottom: 12px;
+    }
+    .signout-card .google-btn {
+      background: #4285F4;
+    }
+    .signout-card p {
+      text-align: center;
+      margin-top: 16px;
+    }
+    .signout-card a {
+      color: #0a66c2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</body>
+</html>

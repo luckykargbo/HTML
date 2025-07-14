@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - VNAT.K Market World</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: #f3f6f8; font-family: 'Segoe UI', Arial, sans-serif; }
+    .container {
+      max-width: 480px;
+      margin: 40px auto;
+      padding: 32px 32px 24px 32px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    nav a {
+      color: #0a66c2;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    h1 {
+      color: #0a66c2;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+    h2 {
+      color: #222;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    form {
+      margin-top: 12px;
+    }
+    .input-label {
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .input-field, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 16px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #f9f9f9;
+      transition: border 0.2s;
+      resize: vertical;
+    }
+    .input-field:focus, textarea:focus {
+      border: 1.5px solid #0a66c2;
+      outline: none;
+      background: #fff;
+    }
+    .main-btn {
+      width: 100%;
+      background: #0a66c2;
+      color: white;
+      padding: 14px 0;
+      border: none;
+      border-radius: 24px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 8px;
+      transition: background 0.2s;
+    }
+    .main-btn:hover {
+      background: #004182;
+    }
+    .success-msg {
+      color: #219150;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: none;
+    }
+    .error-msg {
+      color: #c00;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 18px 4vw 18px 4vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>VNAT.K Market World</h1>
+      <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main>
+      <h2>Contact Us</h2>
+      <form id="contact-form" autocomplete="off">
+        <label for="name" class="input-label">Name</label>
+        <input type="text" id="name" name="name" required class="input-field">
+        <label for="email" class="input-label">Email</label>
+        <input type="email" id="email" name="email" required class="input-field">
+        <label for="message" class="input-label">Message</label>
+        <textarea id="message" name="message" rows="4" required class="input-field"></textarea>
+        <button type="submit" class="main-btn">Send</button>
+        <p class="success-msg" id="contact-success"></p>
+        <p class="error-msg" id="contact-error"></p>
+      </form>
+    </main>
+  </div>
+  <script>
+    document.getElementById('contact-form').onsubmit = function(e) {
+      e.preventDefault();
+      // Simulate sending message
+      document.getElementById('contact-success').textContent = 'Thank you for contacting us! We will get back to you soon.';
+      document.getElementById('contact-success').style.display = 'block';
+      document.getElementById('contact-error').style.display = 'none';
+      document.getElementById('contact-form').reset();
+      setTimeout(function() {
+        document.getElementById('contact-success').style.display = 'none';
+      }, 3000);
+    };
+  </script>
+</body>
+</html>

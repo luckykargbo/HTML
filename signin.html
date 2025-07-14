@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - VNAT.K Market World</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: #f3f6f8; font-family: 'Segoe UI', Arial, sans-serif; }
+    .container {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 32px 32px 24px 32px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 24px auto;
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #0a66c2;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .input-label {
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .input-field {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 16px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #f9f9f9;
+      transition: border 0.2s;
+    }
+    .input-field:focus {
+      border: 1.5px solid #0a66c2;
+      outline: none;
+      background: #fff;
+    }
+    .forgot-link {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      color: #0a66c2;
+      text-decoration: none;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+    .main-btn {
+      width: 100%;
+      background: #0a66c2;
+      color: white;
+      padding: 14px 0;
+      border: none;
+      border-radius: 24px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 16px;
+      transition: background 0.2s;
+    }
+    .main-btn:hover {
+      background: #004182;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 24px 0 16px 0;
+    }
+    .divider hr {
+      flex: 1;
+      border: none;
+      border-top: 1px solid #eee;
+    }
+    .divider span {
+      margin: 0 12px;
+      color: #888;
+      font-size: 13px;
+    }
+    .social-btn {
+      width: 100%;
+      padding: 12px 0;
+      border: none;
+      border-radius: 24px;
+      font-size: 1.05rem;
+      cursor: pointer;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .social-btn.apple {
+      background: #000;
+      color: #fff;
+    }
+    .social-btn.apple:hover {
+      background: #222;
+    }
+    .social-btn.google {
+      background: #4285F4;
+      color: #fff;
+    }
+    .social-btn.google:hover {
+      background: #1967d2;
+    }
+    .signup-link {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      color: #0a66c2;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    @media (max-width: 500px) {
+      .container { padding: 18px 4vw 18px 4vw; }
+      .logo { width: 48px; height: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="box-shadow: 0 8px 32px rgba(0,0,0,0.18); border: 1.5px solid #f3b13c;">
+    <img src="images/WhatsApp_Image_2025-06-17_at_17.19.28_92a4fd10-removebg-preview.png" alt="VNAT.K Market World Logo" class="logo">
+    <div style="display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+      <span style="background:#f3b13c;color:#fff;padding:4px 14px;border-radius:16px;font-weight:700;font-size:1.05rem;letter-spacing:1px;box-shadow:0 2px 8px rgba(243,177,60,0.12);margin-right:8px;">Pro Account</span>
+      <i class="fa-solid fa-briefcase" style="color:#f3b13c;font-size:1.2rem;"></i>
+    </div>
+    <h2 style="color:#222;font-size:1.7rem;letter-spacing:0.5px;">Sign in to your Business Account</h2>
+    <p style="text-align:center;color:#888;font-size:1.05rem;margin-bottom:18px;">Access exclusive business tools, manage your store, and connect with global buyers on VNAT.K Market World.</p>
+    <form id="signin-form" autocomplete="off">
+      <label for="email" class="input-label">Business Email</label>
+      <input type="email" id="email" name="email" required class="input-field" placeholder="your@email.com">
+      <label for="password" class="input-label">Password</label>
+      <input type="password" id="password" name="password" required class="input-field" placeholder="Enter your password">
+      <a href="reset-password.html" class="forgot-link">Forgot password?</a>
+      <button type="submit" class="main-btn" style="background:#f3b13c;">Sign in</button>
+      <div id="code-msg" style="color:#c00;text-align:center;display:none;margin-bottom:10px;"></div>
+      <div class="divider">
+        <hr>
+        <span>or</span>
+        <hr>
+      </div>
+      <button type="button" class="social-btn google" style="background:#fff;color:#222;border:1px solid #eee;">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo" style="height:20px;vertical-align:middle;">Continue with Google
+      </button>
+      <button type="button" class="social-btn apple" style="background:#222;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple logo" style="height:20px;vertical-align:middle;">Continue with Apple
+      </button>
+    </form>
+    <a href="signup.html" class="signup-link" id="signup-link" style="margin-top:22px;">Don't have a Pro Account? <span style="color:#f3b13c;">Sign up</span></a>
+  </div>
+  <script>
+    // Modern login flow with backend integration
+    document.getElementById('signin-form').onsubmit = async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const feedback = document.getElementById('code-msg');
+      feedback.style.display = 'none';
+      feedback.textContent = '';
+      try {
+        const res = await fetch('http://localhost:3000/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          localStorage.setItem('isLoggedIn','true');
+          localStorage.setItem('username', email);
+          window.location.href = 'home.html';
+        } else {
+          feedback.textContent = data.error || 'Invalid email or password.';
+          feedback.style.display = 'block';
+        }
+      } catch (err) {
+        feedback.textContent = 'Network error. Please try again.';
+        feedback.style.display = 'block';
+      }
+    };
+    // Hide sign up link if already logged in
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      document.getElementById('signup-link').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
